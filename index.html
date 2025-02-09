@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Gift</title>
+    <!-- Bootstrap 4.5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Style -->
+    <style>
+        body {
+            background-color: #f4c2c2; /* Pink background color */
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .btn {
+            background-color: #ff66b2; /* Pink button color */
+            color: white;
+            font-size: 18px;
+        }
+
+        .btn:hover {
+            background-color: #ff3385; /* Darker pink on hover */
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 50px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Birthday Gift</h1>
+        <p>Click the button to get a random price for your birthday gift!</p>
+
+        <!-- Button to generate random price -->
+        <button class="btn btn-lg" onclick="generatePrice()">Generate Random Price</button>
+
+        <!-- Display the price -->
+        <div class="price" id="priceDisplay"></div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        function generatePrice() {
+            // List of prices
+            const prices = [2.99, 9.99, 19.99];
+            // Get a random price from the list
+            const randomPrice = prices[Math.floor(Math.random() * prices.length)];
+            // Display the random price
+            document.getElementById("priceDisplay").innerHTML = `Your Random Birthday Gift Price: $${randomPrice.toFixed(2)}`;
+        }
+    </script>
+</body>
+
+</html>
